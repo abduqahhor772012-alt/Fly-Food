@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --primary: #0c6a7f;
+  --primary-hover: #095364;
+  --primary-light: #128ba7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #080d14;
+  color: #f1f5f9;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080d14;
+}
+::-webkit-scrollbar-thumb {
+  background: #152737;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0c6a7f;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(12, 25, 38, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(15, 31, 48, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(12, 106, 127, 0.25);
+}
+
+.glass-card:hover {
+  border-color: rgba(18, 139, 167, 0.6);
+  box-shadow: 0 12px 32px -10px rgba(12, 106, 127, 0.35);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* Infinity ∞ CSS Motion Path Flight Animation */
+@keyframes flyPathInfinity {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.airplane-svg-runner {
+  offset-path: path('M 100,50 C 145,15 185,15 185,50 C 185,85 145,85 100,50 C 55,15 15,15 15,50 C 15,85 55,85 100,50 Z');
+  offset-rotate: auto;
+  animation: flyPathInfinity 2.2s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -72;
+  }
+}
